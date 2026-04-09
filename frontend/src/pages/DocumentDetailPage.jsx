@@ -142,7 +142,7 @@ const DocumentDetailPage = () => {
               <tr style={{ height: '16mm' }}><td colSpan={6} style={{ border: B, padding: '10px 12px', textAlign: 'center', fontSize: '11pt' }}>제목 : {doc.title}</td></tr>
               <tr><td colSpan={6} style={{ border: B, padding: '20px 12px', fontSize: '12pt', lineHeight: '160%', verticalAlign: 'top' }}>
                 {doc.content && (
-                  <div style={{ lineHeight: '200%', whiteSpace: 'pre-wrap', minHeight: '350px' }}>{doc.content}</div>
+                  <div style={{ lineHeight: '200%', whiteSpace: 'pre-wrap', minHeight: '150px' }}>{doc.content}</div>
                 )}
                 <div style={{ textAlign: 'center', marginTop: '60px', marginBottom: '20px', fontSize: '12pt', letterSpacing: '8px', fontWeight: 'bold' }}>- 아&nbsp;&nbsp;래 -</div>
                 <div style={{ lineHeight: '200%' }}>
