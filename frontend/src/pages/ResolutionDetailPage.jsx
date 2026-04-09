@@ -151,6 +151,7 @@ const ResolutionDetailPage = () => {
                   2. 집 행 금 액 : {formatMoney(res.actualAmount)}
                   {res.remark && <><br/>3. 비 고 : {res.remark}</>}
                 </div>
+                <div style={{ textAlign: 'center', fontWeight: 'bold', marginTop: '60px' }}>이로울리</div>
               </td></tr>
             </tbody>
           </table>
