@@ -150,8 +150,6 @@ const DocumentDetailPage = () => {
                   2. 지 출 금 액 : {formatMoney(doc.amount)}
                   {doc.remark && <><br/>3. 비 고 : {doc.remark}</>}
                 </div>
-                <div style={{ textAlign: 'center', marginTop: '100px', marginBottom: '20px' }}>위와 같이 품의하오니 재가하여 주시기 바랍니다.</div>
-                <div style={{ textAlign: 'center', fontWeight: 'bold', marginTop: '30px' }}>이로울리</div>
               </td></tr>
             </tbody>
           </table>
