@@ -143,7 +143,7 @@ const ResolutionDetailPage = () => {
               <tr style={{ height: '16mm' }}><td colSpan={6} style={{ border: B, padding: '10px 12px', textAlign: 'center', fontSize: '11pt' }}>제목 : {doc.title}</td></tr>
               <tr><td colSpan={6} style={{ border: B, padding: '20px 12px', fontSize: '12pt', lineHeight: '160%', verticalAlign: 'top' }}>
                 {doc.content && (
-                  <div style={{ lineHeight: '200%', whiteSpace: 'pre-wrap', minHeight: '200px' }}>{doc.content}</div>
+                  <div style={{ lineHeight: '200%', whiteSpace: 'pre-wrap', minHeight: '350px' }}>{doc.content}</div>
                 )}
                 <div style={{ textAlign: 'center', marginTop: '60px', marginBottom: '20px', fontSize: '12pt', letterSpacing: '8px', fontWeight: 'bold' }}>- 아&nbsp;&nbsp;래 -</div>
                 <div style={{ lineHeight: '200%' }}>
@@ -151,7 +151,7 @@ const ResolutionDetailPage = () => {
                   2. 집 행 금 액 : {formatMoney(res.actualAmount)}
                   {res.remark && <><br/>3. 비 고 : {res.remark}</>}
                 </div>
-                <div style={{ textAlign: 'center', marginTop: '80px', marginBottom: '20px' }}>위와 같이 결의하오니 재가하여 주시기 바랍니다.</div>
+                <div style={{ textAlign: 'center', marginTop: '100px', marginBottom: '20px' }}>위와 같이 결의하오니 재가하여 주시기 바랍니다.</div>
                 <div style={{ textAlign: 'center', fontWeight: 'bold', marginTop: '30px' }}>이로울리</div>
               </td></tr>
             </tbody>
