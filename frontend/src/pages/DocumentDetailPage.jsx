@@ -65,7 +65,7 @@ const DocumentDetailPage = () => {
   if (!doc) return <div className="text-center text-gray-400 py-20">품의서를 찾을 수 없습니다.</div>;
 
   const getApproval = (role) => doc.approvals?.find(a => a.role === role);
-  const docDateStr = doc.year + '.' + String(doc.month).padStart(2, '0') + '.';
+  const docDateStr = doc.year + '.' + String(doc.month).padStart(2, '0') + '.' + (doc.day ? String(doc.day).padStart(2, '0') + '.' : '');
   const fundTypeLabel = FUND_LABELS[doc.fundType] || doc.fundType;
   const F = '"HCR Batang", "함초롱바탕", Batang, "바탕", serif';
   const B = '1px solid #000';

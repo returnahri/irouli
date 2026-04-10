@@ -24,7 +24,7 @@ const DocumentNewPage = () => {
     expenseName: '',
     amount: '',
     remark: '',
-    docDate: new Date().getFullYear() + '-' + String(new Date().getMonth() + 1).padStart(2, '0'),
+    docDate: new Date().toISOString().slice(0, 10),
     author: user?.name || '',
     startSeq: ''
   });
@@ -118,8 +118,8 @@ const DocumentNewPage = () => {
         </div>
         <div className="grid grid-cols-3 gap-4">
           <div>
-            <label className="block text-sm font-medium text-gray-600 mb-1">품의일자 (시행월) *</label>
-            <input type="month" value={form.docDate} onChange={e => handleChange('docDate', e.target.value)} className="input-field" required />
+            <label className="block text-sm font-medium text-gray-600 mb-1">품의일자 *</label>
+            <input type="date" value={form.docDate} onChange={e => handleChange('docDate', e.target.value)} className="input-field" required />
           </div>
           <div>
             <label className="block text-sm font-medium text-gray-600 mb-1">작성자</label>
@@ -131,9 +131,9 @@ const DocumentNewPage = () => {
             {form.docDate && (
               <p className="text-xs text-gray-500 mt-1">
                 {form.startSeq
-                  ? `문서번호: 품의-${form.docDate.replace('-', '').slice(2)}-${String(form.startSeq).padStart(3, '0')}`
+                  ? `문서번호: 품의-${form.docDate.split('-').slice(0,2).join('').slice(2)}-${String(form.startSeq).padStart(3, '0')}`
                   : nextAutoSeq
-                    ? `다음 문서번호: 품의-${form.docDate.replace('-', '').slice(2)}-${String(nextAutoSeq).padStart(3, '0')}`
+                    ? `다음 문서번호: 품의-${form.docDate.split('-').slice(0,2).join('').slice(2)}-${String(nextAutoSeq).padStart(3, '0')}`
                     : ''
                 }
                 {form.startSeq && usedSeqs.includes(parseInt(form.startSeq)) && (

@@ -25,9 +25,10 @@ const generateDocNumber = async (year, month, startSeq = null) => {
 router.post('/', authenticateToken, async (req, res) => {
   try {
     const { categoryId, title, content, expenseName, amount, remark, docDate, author } = req.body;
-    const [yearStr, monthStr] = docDate.split('-');
-    const year = parseInt(yearStr);
-    const month = parseInt(monthStr);
+    const parts = docDate.split('-');
+    const year = parseInt(parts[0]);
+    const month = parseInt(parts[1]);
+    const day = parts[2] ? parseInt(parts[2]) : null;
 
     const category = await prisma.budgetCategory.findUnique({
       where: { id: categoryId },
@@ -47,7 +48,7 @@ router.post('/', authenticateToken, async (req, res) => {
 
     const document = await prisma.document.create({
       data: {
-        docNumber, year, month, monthSeq,
+        docNumber, year, month, day, monthSeq,
         fundType: category.fundType, categoryId,
         title, content: content || null, expenseName, amount: BigInt(amount),
         remark: remark || null,

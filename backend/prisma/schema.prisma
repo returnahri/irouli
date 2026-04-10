@@ -75,6 +75,7 @@ model Document {
   docNumber   String         @unique
   year        Int
   month       Int
+  day         Int?
   monthSeq    Int
   fundType    FundType
   categoryId  Int
